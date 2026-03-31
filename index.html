@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SoloSched — the personalized scheduling and workflow platform that replaces chaotic DM bookings with clarity and structure." />
+  <title>SoloSched — Get Your Time Back</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --color-bg: #0d0f14;
+      --color-surface: #161920;
+      --color-accent: #5b6ef5;
+      --color-accent-hover: #3d50e8;
+      --color-text: #f0f2ff;
+      --color-muted: #9094b0;
+      --radius: 12px;
+      --max-width: 760px;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Header ─────────────────────────────────────── */
+    header {
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--color-text);
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--color-accent);
+    }
+
+    /* ── Hero ────────────────────────────────────────── */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.5rem;
+    }
+
+    .hero {
+      max-width: var(--max-width);
+      width: 100%;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(91, 110, 245, 0.15);
+      color: var(--color-accent);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid rgba(91, 110, 245, 0.3);
+      margin-bottom: 1.75rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 800;
+      line-height: 1.18;
+      letter-spacing: -0.03em;
+      color: var(--color-text);
+      margin-bottom: 1.25rem;
+    }
+
+    .subheadline-primary {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: var(--color-muted);
+      max-width: 600px;
+      margin: 0 auto 0.875rem;
+    }
+
+    .subheadline-secondary {
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
+      color: var(--color-accent);
+      font-weight: 600;
+      max-width: 540px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .cta-group {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--color-accent);
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 0.85rem 2.25rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      background: var(--color-accent-hover);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+
+    /* ── Features strip ──────────────────────────────── */
+    .features {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 4rem;
+    }
+
+    .feature-card {
+      background: var(--color-surface);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: var(--radius);
+      padding: 1.5rem 1.75rem;
+      max-width: 210px;
+      text-align: left;
+    }
+
+    .feature-card .icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .feature-card h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      color: var(--color-text);
+    }
+
+    .feature-card p {
+      font-size: 0.85rem;
+      color: var(--color-muted);
+      line-height: 1.5;
+    }
+
+    /* ── Footer ──────────────────────────────────────── */
+    footer {
+      padding: 1.5rem 2rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--color-muted);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* ── Responsive ──────────────────────────────────── */
+    @media (max-width: 480px) {
+      .feature-card {
+        max-width: 100%;
+        width: 100%;
+      }
+
+      .features {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="#" class="logo">Solo<span>Sched</span></a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="badge">Scheduling, simplified</div>
+
+      <h1>Tired of juggling schedules, forgetting tasks, and feeling behind every day.</h1>
+
+      <p class="subheadline-primary">
+        SoloSched cuts the chaos so you can finally stay on track without thinking about it.
+      </p>
+
+      <p class="subheadline-secondary">
+        The best alternative to chaotic DM booking — finally get your time back.
+      </p>
+
+      <div class="cta-group">
+        <a href="#" class="btn-primary">Get Started</a>
+      </div>
+
+      <div class="features">
+        <div class="feature-card">
+          <div class="icon">📅</div>
+          <h3>Smart Scheduling</h3>
+          <p>One calendar that adapts to you — no more double-bookings or missed slots.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">✅</div>
+          <h3>Task Clarity</h3>
+          <p>Turn scattered to-dos into a focused, prioritized workflow you can trust.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon">💬</div>
+          <h3>No More DM Chaos</h3>
+          <p>Replace back-and-forth booking messages with a clean, automated flow.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2026 SoloSched. All rights reserved.
+  </footer>
+
+</body>
+</html>
